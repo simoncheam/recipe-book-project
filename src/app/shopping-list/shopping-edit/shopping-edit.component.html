@@ -9,7 +9,7 @@
             class="form-control"
             id="name"
             placeholder="Name"
-            ng-model="name"
+            #nameInput
           />
         </div>
         <div class="col-sm-2 form-group">
@@ -19,12 +19,15 @@
             class="form-control"
             id="amount"
             placeholder="Amount"
+            #amountInput
           />
         </div>
       </div>
       <div class="row btn-group">
         <div class="col-xs-12">
-          <button class="btn btn-success" type="submit">Add</button>
+          <button class="btn btn-success" type="submit" (click)="onAddItem()">
+            Add
+          </button>
           <button class="btn btn-danger" type="button">Delete</button>
           <button class="btn btn-primary" type="button">Clear</button>
         </div>
