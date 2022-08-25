@@ -26,12 +26,13 @@ export class ShoppingListService {
 
   //* Add ingredient method
   addIngredient(ingredient: Ingredient) {
+    console.log('--- addIngredient method -slService')
     this.ingredients.push(ingredient);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 
   addIngredients(ingredients: Ingredient[]) {
-
+    console.log('--- addIngredients method -slService')
     this.ingredients.push(...ingredients);
     this.ingredientsChanged.next(this.ingredients.slice())
 
@@ -44,7 +45,7 @@ export class ShoppingListService {
 
   }
 
-  deleteIndredient(index: number) {
+  deleteIngredient(index: number) {
 
     this.ingredients.splice(index, 1); //! starts at index and removes one element
     this.ingredientsChanged.next(this.ingredients.slice());
