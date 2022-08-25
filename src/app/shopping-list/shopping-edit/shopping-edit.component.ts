@@ -60,6 +60,11 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     this.editMode = false;
   }
 
+  onDelete() {
+    this.slService.deleteIndredient(this.editedItemIndex)
+    this.onClear();
+  }
+
 
   // ! cleans up subscription to prevent memory leaks
   ngOnDestroy(): void {

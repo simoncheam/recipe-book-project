@@ -44,6 +44,13 @@ export class ShoppingListService {
 
   }
 
+  deleteIndredient(index: number) {
+
+    this.ingredients.splice(index, 1); //! starts at index and removes one element
+    this.ingredientsChanged.next(this.ingredients.slice());
+
+  }
+
 
   constructor() { }
 }
