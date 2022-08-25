@@ -17,7 +17,7 @@ export class RecipeDetailComponent implements OnInit {
     private recipeService: RecipeService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     //const id = this.route.snapshot.params['id']; //! only will work for the first time loaded
@@ -34,4 +34,11 @@ export class RecipeDetailComponent implements OnInit {
     this.router.navigate(['edit'], { relativeTo: this.route }); //* simpler method
     // this.router.navigate(['../', this.id,'edit], { relativeTo: this.route }); //! other option with more complex path navigation
   }
+
+  onDeleteRecipe() {
+    this.recipeService.deleteRecipe(this.id);
+    this.router.navigate(['/recipes']); //
+  }
+
+
 }
