@@ -13,20 +13,23 @@ export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
   recipesChanged = new Subject<Recipe[]>()
 
-  private recipes: Recipe[] = [
-    new Recipe(
-      'A Test Recipe1',
-      'This is a Test Recipe1',
-      'https://getsmartratsolutions.com/wp-content/uploads/2021/11/thanksgiving-recipe-ideas.jpg',
-      [new Ingredient('meat', 1), new Ingredient('fries', 20)]
-    ),
-    new Recipe(
-      'A Test Recipe2',
-      'This is a Test Recipe2',
-      'https://getsmartratsolutions.com/wp-content/uploads/2021/11/thanksgiving-recipe-ideas.jpg',
-      [new Ingredient('apples', 1), new Ingredient('bananas', 2)]
-    ),
-  ];
+  //! do not need, because we are using firebase
+  // private recipes: Recipe[] = [
+  //   new Recipe(
+  //     'A Test Recipe1',
+  //     'This is a Test Recipe1',
+  //     'https://getsmartratsolutions.com/wp-content/uploads/2021/11/thanksgiving-recipe-ideas.jpg',
+  //     [new Ingredient('meat', 1), new Ingredient('fries', 20)]
+  //   ),
+  //   new Recipe(
+  //     'A Test Recipe2',
+  //     'This is a Test Recipe2',
+  //     'https://getsmartratsolutions.com/wp-content/uploads/2021/11/thanksgiving-recipe-ideas.jpg',
+  //     [new Ingredient('apples', 1), new Ingredient('bananas', 2)]
+  //   ),
+  // ];
+
+  private recipes: Recipe[] = [];
 
   constructor(private slService: ShoppingListService) { }
 
