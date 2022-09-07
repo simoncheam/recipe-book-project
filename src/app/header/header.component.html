@@ -5,8 +5,8 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li routerLinkActive="active">
-          <a routerLink="/recipes" *ngIf="isAuthed">Recipes</a>
+        <li routerLinkActive="active" *ngIf="isAuthed">
+          <a routerLink="/recipes">Recipes</a>
         </li>
         <li routerLinkActive="active">
           <a routerLink="/shopping-list">Shopping List</a>
@@ -16,17 +16,11 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
+        <li *ngIf="isAuthed">
           <a style="cursor: pointer">Logout</a>
         </li>
-        <li class="dropdown" appDropdown>
-          <a
-            style="cursor: pointer"
-            class="dropdown-toggle"
-            role="button"
-            *ngIf="isAuthed"
-            >Manage <span class="caret"></span
-          ></a>
+        <li class="dropdown" appDropdown *ngIf="isAuthed">
+          <a style="cursor: pointer" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li>
               <a style="cursor: pointer" (click)="onSaveData()">Save Data</a>
